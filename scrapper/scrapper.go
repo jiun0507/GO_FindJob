@@ -26,6 +26,7 @@ func Scrape(term string) {
 	c := make(chan []extractedJob)
 	var jobs []extractedJob
 	totalPages := getPages(baseURL)
+	fmt.Println(totalPages)
 	for i := 0; i < totalPages; i++ {
 		go getPage(i, baseURL, c)
 	}
